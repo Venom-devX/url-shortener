@@ -1,0 +1,5 @@
+{
+    "jwt_refresh_secret": "PUT_YOUR_SECRET_HERE",
+    "jwt_secret": "PUT_YOUR_SECRET_HERE",
+    "port": 80
+}
