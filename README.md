@@ -51,8 +51,7 @@ Configure your server and security keys:
 {
     "port": 3000,
     "jwt_secret": "access-token-secret-key",
-    "jwt_refresh_secret": "refresh-token-secret-key",
-    "honeypot_logger": "active"
+    "jwt_refresh_secret": "refresh-token-secret-key"
 }
 ```
 ### 4. Install Dependencies
