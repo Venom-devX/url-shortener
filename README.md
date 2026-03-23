@@ -37,8 +37,8 @@ CREATE INDEX idx_blacklist_ip ON blacklist(ip);
 ```
 
 ### 2. Environment Variables (.env)
-```env
 Create a .env file in the root directory:
+```.env
 DB_URL=https://your-project.supabase.co
 DB_SECRET=your-service-role-key
 HASHIDS_SALT=a-very-secret-salt-for-encoding
@@ -53,6 +53,13 @@ Configure your server and security keys:
     "jwt_refresh_secret": "refresh-token-secret-key",
     "honeypot_logger": "active"
 }
+```
+### 4. Install Dependencies
+
+Run the following command to install all required dependencies:
+
+```bash
+npm install
 ```
 
 ## 🚀 Features & Limits
