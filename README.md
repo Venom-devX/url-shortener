@@ -4,7 +4,7 @@ A high-performance URL shortener built with **TypeScript**, **Express**, and **S
 ## 🛠️ Setup & Installation
 
 ### 1. Database Configuration
-Create a project in Supabase and execute the following SQL in the Query Editor (Copie o código abaixo):
+Create a project in Supabase and execute the following SQL in the Query Editor:
 ```SQL
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
