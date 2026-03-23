@@ -74,6 +74,7 @@ npm install
 - POST /v1/users/login -> Token Issuance.
 - POST /v1/shortner/short-url -> Generate link.
 - PATCH /v1/shortner/favorite -> Toggle favorite.
+- ... (view /src/routes/private.ts and /src/routes/public.ts for more info)
 
 ---
 - Developed by Venom ❤️
