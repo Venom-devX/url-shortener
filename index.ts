@@ -5,6 +5,7 @@ import {readFileSync} from "fs";
 import jwt from "./src/modules/jwt";
 import cors from "cors";
 import {RateLimiterMemory} from "rate-limiter-flexible";
+import db from "./src/modules/db";
 
 const app = express();
 
@@ -67,7 +68,24 @@ app.use(async (req, res, next) => {
 });
 
 app.use(express.json());
+app.use(async (req, res, next) => {
+    const ip =
+    (req.headers["x-forwarded-for"] as string)?.split(",")[0] ||
+    req.ip;
+    
+    const {data, error} = await db.from("blacklist").select("id").eq("ip", ip).maybeSingle();
+    if (error) {
+        return res.status(500).send({message: "internal server error"});
+    }
+    if (data) {
+        const status = Math.random() > 0.5;
+        return res.status(
+            status ? 403 : 404
+        ).send({ message: status ? "forbidden" : "not found" });
+    }
 
+    return next();
+})
 app.use(public_routes);
 app.use(private_routes_middleware, private_routes);
 
